@@ -1,8 +1,8 @@
 {
   "name": "gulptask-revision",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Static asset revisioning task for gulp.js",
-  "main": "./gulpfile.js",
+  "main": "./index.js",
   "repository": "https://MasatoMakino@github.com/MasatoMakino/gulptask-revision.git",
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
