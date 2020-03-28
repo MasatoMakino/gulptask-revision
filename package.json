@@ -1,18 +1,18 @@
 {
   "name": "gulptask-revision",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Static asset revisioning task for gulp.js",
   "main": "./index.js",
   "repository": "https://MasatoMakino@github.com/MasatoMakino/gulptask-revision.git",
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "gulp": "^4.0.1",
+    "gulp": "^4.0.2",
     "gulp-rev": "^9.0.0",
     "gulp-rev-delete-original": "^0.2.3",
-    "gulp-rev-rewrite": "^1.1.4"
+    "gulp-rev-rewrite": "^3.0.2"
   },
   "devDependencies": {
-    "prettier": "^1.17.0"
+    "prettier": "^2.0.2"
   }
 }
