@@ -1,4 +1,4 @@
 "use strict";
 
-const rev = require("./bin")("./dist");
+const rev = require("./bin").generateTasks();
 exports.revision = rev;

@@ -6,9 +6,20 @@ const revRewrite = require("gulp-rev-rewrite");
 const revDelete = require("gulp-rev-delete-original");
 const path = require("path");
 
-module.exports = distDir => {
+interface Option{
+  distDir?:string
+}
+
+const initOption =(option?:Option) =>{
+  option ??= {};
+  option.distDir ??= "./dist";
+  return option
+}
+
+export function generateTasks(option:Option) {
+  option = initOption(option);
   const manifestFileName = "rev-manifest.json";
-  const distPath = path.resolve(distDir);
+  const distPath = path.resolve(option.distDir);
 
   const rev_files = () => {
     return src(
@@ -29,4 +40,4 @@ module.exports = distDir => {
   };
 
   return series(rev_files, rev_replace);
-};
+}
