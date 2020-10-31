@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateTasks = void 0;
 var _a = require("gulp"), series = _a.series, src = _a.src, dest = _a.dest;
+var readFileSync = require("fs").readFileSync;
 var rev = require("gulp-rev");
 var revRewrite = require("gulp-rev-rewrite");
 var revDelete = require("gulp-rev-delete-original");
@@ -25,7 +26,7 @@ function generateTasks(option) {
             .pipe(dest(distPath));
     };
     var rev_replace = function () {
-        var manifest = src(path.resolve(distPath, manifestFileName));
+        var manifest = readFileSync(path.resolve(distPath, manifestFileName));
         return src(path.resolve(distPath, "**/*.+(html|css|js)"))
             .pipe(revRewrite({ manifest: manifest }))
             .pipe(dest(distPath));
