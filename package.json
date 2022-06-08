@@ -10,6 +10,9 @@
   },
   "author": "MasatoMakino <unagiinu.g@gmail.com>",
   "license": "MIT",
+  "files": [
+    "bin"
+  ],
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-rev": "^9.0.0",
