@@ -6,6 +6,7 @@ const rev = require("gulp-rev");
 const revRewrite = require("gulp-rev-rewrite");
 const revDelete = require("gulp-rev-delete-original");
 const path = require("path");
+import { unlinkSync, accessSync } from "fs";
 
 interface Option {
   distDir?: string;
@@ -22,10 +23,33 @@ export function generateTasks(option: Option) {
   const manifestFileName = "rev-manifest.json";
   const distPath = path.resolve(option.distDir);
 
+  const removeManifest = () => {
+    const manifestFilePath = path.resolve(distPath, manifestFileName);
+
+    const existManifest = () => {
+      try {
+        accessSync(manifestFilePath);
+        return true;
+      } catch {
+        return false;
+      }
+    };
+
+    const exist = existManifest();
+    if (exist) {
+      unlinkSync(manifestFilePath);
+    }
+  };
+
   const rev_files = () => {
-    return src(
-      path.resolve(distPath, "**/*.+(js|css|png|gif|jpg|jpeg|svg|woff)")
-    )
+    removeManifest();
+
+    const globPattern = path.resolve(
+      distPath,
+      "**/*.+(js|css|png|gif|jpg|jpeg|svg|woff|json)"
+    );
+
+    return src(globPattern)
       .pipe(rev())
       .pipe(revDelete())
       .pipe(dest(distPath))
