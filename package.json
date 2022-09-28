@@ -1,6 +1,6 @@
 {
   "name": "@masatomakino/gulptask-revision",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "Static asset revision task for gulp.js",
   "main": "./bin/index.js",
   "types": "./bin/index.d.ts",
@@ -24,7 +24,7 @@
     "prettier": "^2.7.1",
     "typescript": "^4.8.4"
   },
-  "overrides":{
+  "overrides": {
     "glob-parent": "^5.1.2"
   },
   "scripts": {
