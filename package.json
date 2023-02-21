@@ -1,6 +1,6 @@
 {
   "name": "@masatomakino/gulptask-revision",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Static asset revision task for gulp.js",
   "main": "./bin/index.js",
   "types": "./bin/index.d.ts",
